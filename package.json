@@ -1,0 +1,14 @@
+{
+  "name": "wb-calendar",
+  "version": "1.0.0",
+  "description": "The `WB-weather` module was designed to complement the `WallberryTheme` module and displays the current weather and forecast. It uses [OpenWeatherMap](https://openweathermap.org/) as its default weather provider, but it can be easily configured to use other weather providers instead.",
+  "main": "WB-calendar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-ical": "^0.16.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"WLOADING": "Loading Calendars&hellip;",
+
+	"TODAY": "Today",
+	"ERROR": "Error fetching data:",
+	"RETRYING": "This is probably due to a network issue; Retrying in {delay} seconds."
+}

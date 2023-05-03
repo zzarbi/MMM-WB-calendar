@@ -1,0 +1,212 @@
+.calendar-agenda .day-container li {
+  clear: both;
+}
+/* Adjust margin for languages with long terms for "All day" */
+.agenda-event-details {
+  margin-left: 5em;
+}
+.calendar-agenda-horiz .agenda-event-details {
+  margin-left: 0;
+  clear: both;
+}
+
+.block-empty-error {
+  background: rgba(140, 140, 140, 0.8);
+  padding: 1.5em 1em;
+  opacity: 0.6;
+  text-align: center;
+}
+.block-empty-error-icon {
+  font-size: 1.8em;
+  margin-bottom: 0.4em;
+}
+.calendar {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.calendar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.calendar li {
+  margin-top: 8px;
+}
+
+.calendar-agenda .calendar-table {
+	height: 100%;
+}
+.calendar-agenda .calendar-table td {
+	padding: 15px;
+	vertical-align: top;
+}
+.agenda-legend {
+  font-size: 27px;
+  opacity: .6;
+  font-weight: 400;
+}
+
+.calendar-agenda-dark {
+	color: rgba(0,0,0,.7);
+	text-shadow: none;
+}
+.calendar-agenda .calendar .day-container {
+	padding: 15px 0 0 15px;
+}
+.calendar-agenda .calendar {
+	margin-bottom: 20px;
+}
+.calendar-agenda .calendar {
+	overflow: hidden;
+}
+.calendar-agenda  .event-summary {
+	margin-left: 3.75em;
+}
+
+.calendar-agenda .day-container {
+	word-break: break-word;
+}
+
+.calendar-agenda-horiz .day-container {
+	padding-left: .65em;
+}
+.calendar-agenda-horiz .day-container:first-child {
+	padding-left: 0;
+}
+
+.calendar-agenda-horiz .day-container {
+	width: 15em;
+}
+
+.agenda-day-header {
+	border-bottom: 1px solid rgba(255,255,255,.3); 
+	padding-bottom: .3em;
+}
+.layout-landscape .agenda-day-header {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+.calendar-agenda-dark .agenda-day-header {
+	border-bottom: 1px solid rgba(0,0,0,.2); 
+}
+.agenda-day-header .agenda-day-header-num {
+	font-size: 150%;
+	font-weight:300;
+	opacity:.8;
+}
+.agenda-day-header-num, .agenda-event-time {
+	font-family: Rubik, Consolas, monaco, monospace;
+}
+.agenda-event-time {
+	float: left; 
+	opacity: .65; 
+	font-size: 90%;
+	font-weight: 500;
+	padding-top: 0;
+}
+.calendar-agenda-horiz .agenda-event-time {
+	float: none;
+}
+.agenda-event-time-end {
+	font-size: 90%;
+	font-weight: 300;
+}
+
+.agenda-event-summary {
+	font-weight: 500;
+}
+.agenda-event-description {
+	opacity: .65;
+	margin-top: .3em;
+	font-size: 90%;
+}
+/*.calendar-agenda-horiz .agenda-event-summary {
+	padding-top: .1em; 
+}*/
+.calendar-agenda-horiz .agenda-event-time-start {
+	float: left;
+	margin-right: .35em;
+}
+.has-event-background .agenda-event-time-end {
+	margin-bottom: .2em;
+}
+.calendar-agenda-horiz .agenda-event-time-end {
+	float: left;
+	margin-bottom: 0;
+}
+.calendar-agenda-horiz .agenda-event-time-end:before {
+	content: "- ";
+}
+.agenda-event-day-count {
+	font-size: 85%;
+	opacity: .6; 
+	margin-top: .3em;
+}
+.agenda-event-location {
+	margin-top: .3em;
+	margin-bottom: .1em;
+	font-size: 90%;
+	opacity: .5;
+}
+.agenda-no-events {
+	opacity: .35;
+	margin-top: 1em;
+}
+
+/* Make the vertical calendar display horizontally */
+.calendar-agenda.calendar-agenda-horiz {
+	display: table-row;
+}
+.calendar-agenda.calendar-agenda-horiz .day-container {
+	display: table-cell;
+}
+
+.calendar-agenda li {
+	border-left-width: .25em; 
+	border-left-style: solid; 
+	padding-left: .35em;
+}
+.calendar-monthly li {
+	color: #fff;
+}
+
+
+li.has-event-background.white {
+	background: #88888833;}
+li.has-event-background.grey {
+	background: #66666633;}
+li.has-event-background.lt-grey {
+	background: #99999933;}
+li.has-event-background.red {
+	background: #ce3d3d33;}
+li.has-event-background.orange {
+	background: #cc894133;}
+li.has-event-background.yellow {
+	background: #d3b80b33;}
+li.has-event-background.green {
+	background: #15b72a33;}
+li.has-event-background.teal {
+	background: #13c19333;}
+li.has-event-background.blue {
+	background: #0e87c433;}
+li.has-event-background.purple {
+	background: #3e28ba33;}
+li.has-event-background.pink {
+	background: #c857ac33;}
+li.has-event-background.red-bright {
+	background: #ff4f4f33;}
+li.has-event-background.orange-bright {
+	background: #ffb04f33;}
+li.has-event-background.yellow-bright {
+	background: #fcff4f33;}
+li.has-event-background.green-bright {
+	background: #30da4633;}
+li.has-event-background.teal-bright {
+	background: #27e8d833;}
+li.has-event-background.blue-bright {
+	background: #68baff33;}
+li.has-event-background.pink-bright {
+	background: #fd79ff33;}

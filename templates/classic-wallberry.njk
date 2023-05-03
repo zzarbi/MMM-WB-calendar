@@ -1,0 +1,57 @@
+<div class="calendar">
+	{% if data %}
+	<div class="legend agenda-legend">
+		LEGEND&nbsp;&nbsp;&nbsp;&nbsp;
+		{% for cal in data.calendars %}
+		<i class="fa-solid fa-circle fa-xs" style="color: {{ cal.color }};"></i>
+		{{ cal.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		{% endfor %}
+	</div>
+
+	<div class="calendar-agenda calendar-agenda-horiz">
+	{% set day = null %}
+	{% set dayNumber = 0 %}
+	{% for event in data.events %}
+	{% if day == null %}
+	{% set dayNumber = 1 %}
+		<div class="day-container">
+			{% set day = event.start | dateFmt("D")%}
+			<div class="agenda-day-header">
+				<span class="agenda-day-header-num">{{ event.start | dateFmt("D") }}</span>&nbsp; {{ event.start | dateFmt("ddd") }}
+			</div>
+			<ul>
+	{% elif day != event.start | dateFmt("D") %}
+		{% set day = event.start | dateFmt("D") %}
+		{% set dayNumber = dayNumber + 1 %}
+		{% if dayNumber <= config.maximumNumberOfDays %}
+			</ul>
+		</div>
+		<div class="day-container">
+			<div class="agenda-day-header">
+				<span class="agenda-day-header-num">{{ event.start | dateFmt("D") }}</span>&nbsp; {{ event.start | dateFmt("ddd") }}
+			</div>
+			<ul>
+		{% endif %}
+	{% endif %}
+			{% if dayNumber <= config.maximumNumberOfDays %}
+				<li class="{{ event.color}}" style="border-left-color:{{ event.color}};">
+					{% if event.allDay %}
+					<div class="agenda-event-time all-day">All day</div>
+					{% else %}
+					<div class="agenda-event-time ">
+						<div class="agenda-event-time-start">{{ event.start | dateFmt("h:mm A") }}</div>
+					</div>
+					{% endif %}
+					<div class="agenda-event-details">
+						<div class="agenda-event-summary">{{ event.title }}</div>		
+					</div>
+				</li>
+			{% endif %}
+	{% endfor %}
+			</ul>
+		</div>
+	</div>
+	{% else %}
+	<div class="wb-loading">{{ "WLOADING" | translate | safe }}</div>
+	{% endif %}
+</div>
