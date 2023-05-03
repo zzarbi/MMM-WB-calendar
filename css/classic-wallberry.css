@@ -1,3 +1,9 @@
+
+.WB-calendar {
+	overflow: hidden;
+    height: 780px;
+}
+
 .calendar-agenda .day-container li {
   clear: both;
 }
