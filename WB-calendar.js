@@ -7,7 +7,8 @@
 Module.register("WB-calendar", {
 	// Module config defaults.
 	defaults: {
-		initialLoadDelay: 10 * 60 * 1000,
+		initialLoadDelay: 60 * 1000,
+		refreshInMinutes: 15,
 		maximumNumberOfDays: 2,
 		limitPerDay: 5,
 		pastDaysCount: 0,
@@ -59,7 +60,7 @@ Module.register("WB-calendar", {
 
 		this.addNunjuckFilters();
 
-		this.scheduleUpdate(1);// todo
+		this.scheduleUpdate(this.config.initialLoadDelay);
 	},
 
 	suspend() {
@@ -73,15 +74,11 @@ Module.register("WB-calendar", {
 		this.scheduleUpdate(this.config.initialLoadDelay);
 	},
 
-	scheduleUpdate(delay=null) {
-		let nextFetch = 3600 * 1000;
-		if (delay !== null && delay >= 0) {
-			nextFetch = delay;
-		}
-
+	scheduleUpdate(delay) {
 		this.fetchTimer = setTimeout(() => {
 			this.sendSocketNotification("FETCH_DATA", this.config);
-		}, nextFetch);
+			this.scheduleUpdate(this.config.refreshInMinutes * 60 * 1000);
+		}, delay);
 	},
 
 	socketNotificationReceived (notification, payload) {
